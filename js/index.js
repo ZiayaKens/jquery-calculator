@@ -1,12 +1,4 @@
-// $(function(){
-//
-// var $butts = ($('.buttons').children('span'));
-//
-// console.log($butts);
-// $.each($butts, function( index) {
-//   console.log($butts[index].innerHTML);
-//
-// });                                             // not sure what 3 through 9 are doing???????????
+
 
 var number1 = '';
 var number2 = '';
@@ -17,7 +9,7 @@ var screen = $('#screen')
 
 
 $('.buttons').on('click', 'span', function(event){
-  
+
   if(event.target.innerHTML == 'C'){                  //all the time the C key should reset
     screen.html('');                   // screen got emptied
     clickedoperand = false;                 // resets if an operand is clicked
@@ -32,7 +24,6 @@ $('.buttons').on('click', 'span', function(event){
         screen.html(screen.html()+event.target.innerHTML);                //adds the number to the screen
         number1 = number1 + event.target.innerHTML;                       //adds the number to a variable that represents the first number in the calculator
       }
-      //else if(event.target.innerHTML.includes('C'))
   }
   else if (number1 != '' && clickedoperand === false){       // if the screen isnt empty (has a/some numbers) and an operand hasnt been clicked yet
     if($(event.target).hasClass('operator') && event.target.innerHTML != '=') {                             //if you click an operand (when there is just one # on the screen)
